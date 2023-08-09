@@ -45,8 +45,13 @@ if(isset($_POST["ngaynhapphieu"]))
     $ngaynhapphieu=$_POST["ngaynhapphieu"];
 }
 else return;
+if(isset($_POST["idPhieumaymoc"]))
+{
+    $idPhieumaymoc=$_POST["idPhieumaymoc"];
+}
+else return;
 
-$queryadd="INSERT INTO `sudungmaymoc`( `tenMayMoc`, `tinhTrang`, `tonDaungay`,`khachHangMaSo`,`soluongSudung`,`conlaiCuoiNgay`,`tinhtrangCuoiNgay`,`ngayNhapPhieu`) VALUES ('$tenmaymoc','$tinhtrang','$tondaungay','$khachhangmaso','$soluongsudung','$conlaicuoingay','$tinhtrangcuoingay','$ngaynhapphieu')";
+$queryadd="INSERT INTO `sudungmaymoc`( `tenMayMoc`, `tinhTrang`, `tonDaungay`,`khachHangMaSo`,`soluongSudung`,`conlaiCuoiNgay`,`tinhtrangCuoiNgay`,`ngayNhapPhieu`,`idPhieumaymoc`) VALUES ('$tenmaymoc','$tinhtrang','$tondaungay','$khachhangmaso','$soluongsudung','$conlaicuoingay','$tinhtrangcuoingay','$ngaynhapphieu','$idPhieumaymoc')";
 $exe = mysqli_query($con,$queryadd);
 
 $arr=[];

@@ -8,8 +8,13 @@ if(isset($_POST["ngaynhapphieu"]))
     $ngaynhapphieu=$_POST["ngaynhapphieu"];
 }
 else return;
+if(isset($_POST["uid"]))
+{
+    $uid=$_POST["uid"];
+}
+else return;
 
-$queryadd="INSERT INTO `phieumaymoc`(`ngayNhapPhieu`) VALUES ('$ngaynhapphieu')";
+$queryadd="INSERT INTO `phieumaymoc`(`ngayNhapPhieu`,`uid`) VALUES ('$ngaynhapphieu','$uid')";
 $exe = mysqli_query($con,$queryadd);
 
 $arr=[];

@@ -22,6 +22,11 @@ if ($result->num_rows > 0) {
     // Tìm thấy người dùng có thông tin đăng nhập hợp lệ
     $response['Success'] = true;
     $response['Message'] = "Đăng nhập thành công!";
+
+
+     // Truy vấn để lấy uid từ cơ sở dữ liệu
+     $row = $result->fetch_assoc();
+     $response['uid'] = $row['uid'];
 } else {
     // Không tìm thấy người dùng có thông tin đăng nhập hợp lệ
     $response['Success'] = false;
